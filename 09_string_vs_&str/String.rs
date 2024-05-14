@@ -1,27 +1,25 @@
 fn main() {
-    
     let mut s: String = String::from(""); // initilise an empty String as String, not as a string slice &str, because slices are immutable
     s.push_str("Hello, World"); // push character sequence
     s.push('!'); // push a single character
 
     assert_eq!(s, "Hello, World!");
 
-    println!("{}",s);
+    println!("{}", s);
     println!("Success!");
-
 
     //------------------------------------------------
 
     // let s1: String = String::from("Hello"); // would panic because s1 needs to be mutable
     let mut s1: String = String::from("Hello");
 
-    s1.push(','); // pushing a single char, hence push and single quotes 
+    s1.push(','); // pushing a single char, hence push and single quotes
     // s1.push(" world"); // would panic because pushing a sequence, need to use push_str instead
     s1.push_str(" world");
     // s1 += "!".to_string(); // would panic because "!" is already a string literal (which is what s1 expects)
     s1 += "!";
 
-    println!("{}",s1);
+    println!("{}", s1);
 
     //------------------------------------------------
 
@@ -51,7 +49,7 @@ fn main() {
     let s7: String = String::from("Hello,");
     let s8: String = String::from(" World");
 
-    let s9 = s7 + &s8; // works the same way as the previous example     
+    let s9 = s7 + &s8; // works the same way as the previous example
 
     assert_eq!(s9, "Hello, World");
 
